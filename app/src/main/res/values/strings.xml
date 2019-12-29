@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">DivdendUSA</string>
     <string name="search_stock">Search Stock</string>
-    <string name="get_information_first">Get Information First!</string>
-    <string name="seq">No</string>
-    <string name="stockSymbol">Stock Symbol</string>
-    <string name="companyName">Company Name</string>
-    <string name="dividendYield">Dividend Yield</string>
-    <string name="closingPrice">Closing Price</string>
-    <string name="annualizedDividend">Annualized Dividend</string>
-    <string name="exdivDate">Exdiv Date</string>
-    <string name="payDate">Pay Date</string>
+    <!--<string name="get_information_first">Get Information First!</string>-->
+    <!--<string name="seq">No</string>-->
+    <!--<string name="stockSymbol">Stock Symbol</string>-->
+    <!--<string name="companyName">Company Name</string>-->
+    <!--<string name="dividendYield">Dividend Yield</string>-->
+    <!--<string name="closingPrice">Closing Price</string>-->
+    <!--<string name="annualizedDividend">Annualized Dividend</string>-->
+    <!--<string name="exdivDate">Exdiv Date</string>-->
+    <!--<string name="payDate">Pay Date</string>-->
     <string name="now_searching">Now Searching...</string>
 
     <string name="button" >Get List!</string>
 
-    <string name="gatheringInformation">Gathering information</string>
+    <!--<string name="gatheringInformation">Gathering Information</string>-->
 </resources>

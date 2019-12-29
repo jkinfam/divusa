@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 if(db==null) {
-                    showMsg(Integer.toString(R.string.gatheringInformation),1);
+                    showMsg("Gathering Information",1);
                     deleteExistingDBFile();
                     createDb();     //버튼을 누르면 DB가 생성됨
 
                 }else{
-                    showMsg(Integer.toString(R.string.gatheringInformation),1);
+                    showMsg("Gathering Information",1);
                     //Log.i("한번실행후 재실행","한번실행후 재실행!!!!!!!!!!!!!!!!!!!!!");
                     closeDb();      //한번 실행한 DB가 있으면 테이블과 DB를 없애고
                     deleteExistingDBFile();
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         //DB open helper
         helper = new MySQLiteOpenHelper(MainActivity.this, // 현재 화면의 context
-                "dividend.db", // 파일명
+                "dividendUSA.db", // 파일명
                 null, // 커서 팩토리
                 1); // 버전 번호
         /*
@@ -141,19 +141,19 @@ public class MainActivity extends AppCompatActivity {
                     search = editText.getText().toString();
                     File dbFile = new File("/data/data/divdendusa.apps.mjk/databases/dividendUSA.db");
                     if(!dbFile.exists()){
-                        showMsg(Integer.toString(R.string.get_information_first), 0);
+                        showMsg("Get Information First!", 0);
                         editText.setText("");
                     }else {
                         items.clear();
                         c = db.query("DIVIDENDUSA", null, "NAME like '%" + search + "%'", null, null, null, "_SEQ");
-                        items.add(new Item(Integer.toString(R.string.seq),
-                                                Integer.toString(R.string.stockSymbol),
-                                                Integer.toString(R.string.companyName),
-                                                Integer.toString(R.string.dividendYield),
-                                                Integer.toString(R.string.closingPrice),
-                                                Integer.toString(R.string.annualizedDividend),
-                                                Integer.toString(R.string.exdivDate),
-                                                Integer.toString(R.string.payDate)
+                        items.add(new Item("No",
+                                "Stock Symbol",
+                                "Company Name",
+                                "Dividend Yield",
+                                "Closing Price",
+                                "Annualized Dividend",
+                                "Exdiv Date",
+                                "Pay Date"
                                 ));
                         while (c.moveToNext()) {
                             // c의 int가져와라 ( c의 컬럼 중 id) 인 것의 형태이다.
@@ -350,21 +350,21 @@ public class MainActivity extends AppCompatActivity {
         //Log.i("Cursor로 가져오기","select문 들어옴");
         // 1) db의 데이터를 읽어와서, 2) 결과 저장, 3)해당 데이터를 꺼내 사용
         db = helper.getReadableDatabase(); // db객체를 얻어온다. 읽기 전용
-        c = db.query("DIVIDEND", null, null, null, null, null, null);
+        c = db.query("DIVIDENDUSA", null, null, null, null, null, null);
         //Log.i("Cursor로 가져오기","Cursor c 로 db쿼리문 돌림 ");
         /*
          * 위 결과는 select * from DIVIDEND 가 된다. Cursor는 DB결과를 저장한다. public Cursor
          * query (String table, String[] columns, String selection, String[]
          * selectionArgs, String groupBy, String having, String orderBy)
          */
-        items.add(new Item(Integer.toString(R.string.seq),
-                Integer.toString(R.string.stockSymbol),
-                Integer.toString(R.string.companyName),
-                Integer.toString(R.string.dividendYield),
-                Integer.toString(R.string.closingPrice),
-                Integer.toString(R.string.annualizedDividend),
-                Integer.toString(R.string.exdivDate),
-                Integer.toString(R.string.payDate)
+        items.add(new Item("No",
+                "Stock Symbol",
+                "Company Name",
+                "Dividend Yield",
+                "Closing Price",
+                "Annualized Dividend",
+                "Exdiv Date",
+                "Pay Date"
         ));
         while (c.moveToNext()) {
             // c의 int가져와라 ( c의 컬럼 중 id) 인 것의 형태이다.
