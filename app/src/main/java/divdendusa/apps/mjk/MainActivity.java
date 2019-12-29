@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected Void doInBackground(Void... params) {
-            /*progressBar =(ProgressBar)findViewById(R.id.progressBar);
+            progressBar =(ProgressBar)findViewById(R.id.progressBar);
             Log.i("JsoupAsyncTask","JsoupAsyncTask안에 doInBackground");
             while(pageCheck) {
                 try {
@@ -277,13 +277,14 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 pageNum++;
+                /*dividendUSA에서는 불필요
                 switch (kindOf) {
                     case 0:pageUrl="?&page=";htmlPageUrl = htmlPageUrlFull + pageUrl + pageNum; break;
                     case 1:pageUrl="&page="; htmlPageUrl = htmlPageUrlKospi + pageUrl + pageNum; break;
                     case 2:pageUrl="&page="; htmlPageUrl = htmlPageUrlKosdaq + pageUrl + pageNum; break;
-                }
+                }*/
                 //Log.i("mainActivity","htmlPageUrl"+htmlPageUrl);
-            }*/
+            }
             return null;
         }
         @Override
